@@ -429,7 +429,7 @@ CONFIG_METADATA_2 = {
                             "model": "gpt-4o-mini",
                         },
                     },
-                    "xAI(grok)": {
+                    "XAI(grok)": {
                         "id": "xai",
                         "type": "openai_chat_completion",
                         "enable": True,
