@@ -417,6 +417,39 @@ CONFIG_METADATA_2 = {
                             "model": "gpt-4o-mini",
                         },
                     },
+                    "Coze": {
+                        "id": "coze_app_default",
+                        "type": "coze",
+                        "enable": True,
+                        "app_type": "Agent",
+                        "api_key": "",
+                        "api_base_url": "https://api.coze.cn/v3/chat",
+                        "bot_id": "",
+                        "timeout": 60
+                    },
+                    "Dify": {
+                        "id": "dify_app_default",
+                        "type": "dify",
+                        "enable": True,
+                        "dify_api_type": "chat",
+                        "dify_api_key": "",
+                        "dify_api_base": "https://api.dify.ai/v1",
+                        "dify_workflow_output_key": "",
+                        "dify_query_input_key": "astrbot_text_query",
+                        "variables": {},
+                        "timeout": 60,
+                    },
+                    "SiliconFlow(硅基流动)": {
+                        "id": "siliconflow",
+                        "type": "openai_chat_completion",
+                        "enable": True,
+                        "key": [],
+                        "timeout": 120,
+                        "api_base": "https://api.siliconflow.cn/v1",
+                        "model_config": {
+                            "model": "deepseek-ai/DeepSeek-V3",
+                        },
+                    },
                     "Azure_OpenAI": {
                         "id": "azure",
                         "type": "openai_chat_completion",
@@ -506,17 +539,6 @@ CONFIG_METADATA_2 = {
                             "model": "glm-4-flash",
                         },
                     },
-                    "SiliconFlow(硅基流动)": {
-                        "id": "siliconflow",
-                        "type": "openai_chat_completion",
-                        "enable": True,
-                        "key": [],
-                        "timeout": 120,
-                        "api_base": "https://api.siliconflow.cn/v1",
-                        "model_config": {
-                            "model": "deepseek-ai/DeepSeek-V3",
-                        },
-                    },
                     "MoonShot(Kimi)": {
                         "id": "moonshot",
                         "type": "openai_chat_completion",
@@ -537,18 +559,6 @@ CONFIG_METADATA_2 = {
                         "llmtuner_template": "",
                         "finetuning_type": "lora",
                         "quantization_bit": 4,
-                    },
-                    "Dify": {
-                        "id": "dify_app_default",
-                        "type": "dify",
-                        "enable": True,
-                        "dify_api_type": "chat",
-                        "dify_api_key": "",
-                        "dify_api_base": "https://api.dify.ai/v1",
-                        "dify_workflow_output_key": "",
-                        "dify_query_input_key": "astrbot_text_query",
-                        "variables": {},
-                        "timeout": 60,
                     },
                     "Dashscope(阿里云百炼应用)": {
                         "id": "dashscope",
@@ -626,16 +636,6 @@ CONFIG_METADATA_2 = {
                         "api_base": "https://api.fish-audio.cn/v1",
                         "fishaudio-tts-character": "可莉",
                         "timeout": "20",
-                    },
-                    "Coze": {
-                        "id": "coze",
-                        "type": "coze",
-                        "enable": True,
-                        "app_type": "",
-                        "api_key": "",
-                        "api_base_url": "",
-                        "bot_id": "",
-                        "timeout": 60
                     },
                 },
                 "items": {

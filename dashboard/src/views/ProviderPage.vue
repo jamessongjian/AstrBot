@@ -17,7 +17,6 @@
                         v-for="(item, index) in metadata['provider_group']['metadata']['provider'].config_template"
                         :key="index" rounded="xl" :value="index">
                         <v-list-item-title>{{ index }}</v-list-item-title>
-                        <v-list-item-title v-if="index === 'Coze'">Coze</v-list-item-title>
                     </v-list-item>
                 </v-list>
             </v-menu>
