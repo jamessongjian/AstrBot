@@ -131,13 +131,15 @@ export default {
         getConfig() {
             // 获取配置
             axios.get('/api/config/get').then((res) => {
+                console.log('API请求成功:', res.data);
                 this.config_data = res.data.data.config;
-                this.fetched = true
+                this.fetched = true;
                 this.metadata = res.data.data.metadata;
             }).catch((err) => {
-                save_message = err;
-                save_message_snack = true;
-                save_message_success = "error";
+                console.error('API请求失败:', err);
+                this.save_message = '获取配置失败: ' + err;
+                this.save_message_snack = true;
+                this.save_message_success = 'error';
             });
         },
 
