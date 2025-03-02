@@ -163,6 +163,16 @@ CONFIG_METADATA_2 = {
                         "start_message": "Hello, I'm AstrBot!",
                         "telegram_api_base_url": "https://api.telegram.org/bot",
                     },
+                    "Coze": {
+                        "id": "coze",
+                        "type": "coze",
+                        "enable": False,
+                        "app_type": "",
+                        "api_key": "",
+                        "api_base_url": "",
+                        "bot_id": "",
+                        "timeout": 10,
+                    },
                 },
                 "items": {
                     "telegram_token": {
@@ -221,6 +231,26 @@ CONFIG_METADATA_2 = {
                         "type": "string",
                         "hint": "请务必填对，否则 @ 机器人将无法唤醒，只能通过前缀唤醒。",
                         "obvious_hint": True,
+                    },
+                    "app_type": {
+                        "description": "Coze应用类型",
+                        "type": "string",
+                    },
+                    "api_key": {
+                        "description": "API Key",
+                        "type": "string",
+                    },
+                    "api_base_url": {
+                        "description": "API Base URL",
+                        "type": "string",
+                    },
+                    "bot_id": {
+                        "description": "Bot ID",
+                        "type": "string",
+                    },
+                    "timeout": {
+                        "description": "超时时间（秒）",
+                        "type": "int",
                     },
                 },
             },
@@ -308,7 +338,7 @@ CONFIG_METADATA_2 = {
                     "forward_threshold": {
                         "description": "转发消息的字数阈值",
                         "type": "int",
-                        "hint": "超过一定字数后，机器人会将消息折叠成 QQ 群聊的 “转发消息”，以防止刷屏。目前仅 QQ 平台适配器适用。",
+                        "hint": "超过一定字数后，机器人会将消息折叠成 QQ 群聊的 "转发消息"，以防止刷屏。目前仅 QQ 平台适配器适用。",
                     },
                     "enable_id_white_list": {
                         "description": "启用 ID 白名单",
@@ -627,6 +657,32 @@ CONFIG_METADATA_2 = {
                         "fishaudio-tts-character": "可莉",
                         "timeout": "20",
                     },
+                    "Coze": {
+                        "id": {
+                            "type": "string",
+                            "description": "Coze服务商ID"
+                        },
+                        "app_type": {
+                            "type": "string",
+                            "description": "Coze应用类型"
+                        },
+                        "api_key": {
+                            "type": "string",
+                            "description": "API Key"
+                        },
+                        "api_base_url": {
+                            "type": "string",
+                            "description": "API Base URL"
+                        },
+                        "bot_id": {
+                            "type": "string",
+                            "description": "Bot ID"
+                        },
+                        "timeout": {
+                            "type": "int",
+                            "description": "超时时间（秒）"
+                        }
+                    },
                 },
                 "items": {
                     "sensevoice_hint": {
@@ -645,19 +701,6 @@ CONFIG_METADATA_2 = {
                         "type": "string",
                         "hint": "modelscope 上的模型名称。默认：iic/SenseVoiceSmall。",
                     },
-                    # "variables": {
-                    #     "description": "工作流固定输入变量",
-                    #     "type": "object",
-                    #     "obvious_hint": True,
-                    #     "hint": "可选。工作流固定输入变量，将会作为工作流的输入。也可以在对话时使用 /set 指令动态设置变量。如果变量名冲突，优先使用动态设置的变量。",
-                    # },
-                    # "fastgpt_app_type": {
-                    #     "description": "应用类型",
-                    #     "type": "string",
-                    #     "hint": "FastGPT 应用的应用类型。",
-                    #     "options": ["agent", "workflow", "plugin"],
-                    #     "obvious_hint": True,
-                    # },
                     "dashscope_app_type": {
                         "description": "应用类型",
                         "type": "string",
@@ -1061,90 +1104,3 @@ DEFAULT_VALUE_MAP = {
     "list": [],
     "object": {},
 }
-
-
-# "project_atri": {
-#     "description": "Project ATRI 配置",
-#     "type": "object",
-#     "items": {
-#         "enable": {"description": "启用", "type": "bool"},
-#         "long_term_memory": {
-#             "description": "长期记忆",
-#             "type": "object",
-#             "items": {
-#                 "enable": {"description": "启用", "type": "bool"},
-#                 "summary_threshold_cnt": {
-#                     "description": "摘要阈值",
-#                     "type": "int",
-#                     "hint": "当一个会话的对话记录数量超过该阈值时，会自动进行摘要。",
-#                 },
-#                 "embedding_provider_id": {
-#                     "description": "Embedding provider ID",
-#                     "type": "string",
-#                     "hint": "只有当启用了长期记忆时，才需要填写此项。将会使用指定的 provider 来获取 Embedding，请确保所填的 provider id 在 `配置页` 中存在并且设置了 Embedding 配置",
-#                     "obvious_hint": True,
-#                 },
-#                 "summarize_provider_id": {
-#                     "description": "Summary provider ID",
-#                     "type": "string",
-#                     "hint": "只有当启用了长期记忆时，才需要填写此项。将会使用指定的 provider 来获取 Summary，请确保所填的 provider id 在 `配置页` 中存在。",
-#                     "obvious_hint": True,
-#                 },
-#             },
-#         },
-#         "active_message": {
-#             "description": "主动消息",
-#             "type": "object",
-#             "items": {
-#                 "enable": {"description": "启用", "type": "bool"},
-#             },
-#         },
-#         "vision": {
-#             "description": "视觉理解",
-#             "type": "object",
-#             "items": {
-#                 "enable": {"description": "启用", "type": "bool"},
-#                 "provider_id_or_ofa_model_path": {
-#                     "description": "提供商 ID 或 OFA 模型路径",
-#                     "type": "string",
-#                     "hint": "将会使用指定的 provider 来进行视觉处理，请确保所填的 provider id 在 `配置页` 中存在。",
-#                 },
-#             },
-#         },
-#         "split_response": {
-#             "description": "是否分割回复",
-#             "type": "bool",
-#             "hint": "启用后，将会根据句子分割回复以更像人类回复。每次回复之间具有随机的时间间隔。默认启用。",
-#         },
-#         "persona": {
-#             "description": "人格",
-#             "type": "string",
-#             "hint": "默认人格。当启动 ATRI 之后，在 Provider 处设置的人格将会失效。",
-#             "obvious_hint": True,
-#         },
-#         "chat_provider_id": {
-#             "description": "Chat provider ID",
-#             "type": "string",
-#             "hint": "将会使用指定的 provider 来进行文本聊天，请确保所填的 provider id 在 `配置页` 中存在。",
-#             "obvious_hint": True,
-#         },
-#         "chat_base_model_path": {
-#             "description": "用于聊天的基座模型路径",
-#             "type": "string",
-#             "hint": "用于聊天的基座模型路径。当填写此项和 Lora 路径后，将会忽略上面设置的 Chat provider ID。",
-#             "obvious_hint": True,
-#         },
-#         "chat_adapter_model_path": {
-#             "description": "用于聊天的 Lora 模型路径",
-#             "type": "string",
-#             "hint": "Lora 模型路径。",
-#             "obvious_hint": True,
-#         },
-#         "quantization_bit": {
-#             "description": "量化位数",
-#             "type": "int",
-#             "hint": "模型量化位数。如果你不知道这是什么，请不要修改。默认为 4。",
-#             "obvious_hint": True,
-#         },
-#     },
-# },

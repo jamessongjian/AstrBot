@@ -145,6 +145,9 @@ class ConfigRoute(Route):
         try:
             save_config(self.config, self.config, is_core=True)
             await self.core_lifecycle.provider_manager.load_provider(new_provider_config)
+            if new_provider_config.get('type') == 'Coze':
+                # 处理Coze特定的配置逻辑
+                pass
         except Exception as e:
             return Response().error(str(e)).__dict__
         return Response().ok(None, "新增服务提供商配置成功~").__dict__
@@ -179,6 +182,9 @@ class ConfigRoute(Route):
         for i, provider in enumerate(self.config['provider']):
             if provider['id'] == provider_id:
                 self.config['provider'][i] = new_config
+                if new_config.get('type') == 'Coze':
+                    # 更新Coze特定的配置逻辑
+                    pass
                 break
         else:
             return Response().error("未找到对应服务提供商").__dict__
