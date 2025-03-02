@@ -8,7 +8,7 @@
                         rounded="lg" v-bind="props" color="primary">
                         <template v-slot:default>
                             <v-icon>mdi-plus</v-icon>
-                            新增服务x提供商x
+                            新增服务提供商
                         </template>
                     </v-btn>
                 </template>
