@@ -308,7 +308,7 @@ CONFIG_METADATA_2 = {
                     "forward_threshold": {
                         "description": "转发消息的字数阈值",
                         "type": "int",
-                        "hint": "超过一定字数后，机器人会将消息折叠成 QQ 群聊的 "转发消息"，以防止刷屏。目前仅 QQ 平台适配器适用。",
+                        "hint": "超过一定字数后，机器人会将消息折叠成 QQ 群聊的 ‘转发消息’，以防止刷屏。目前仅 QQ 平台适配器适用。",
                     },
                     "enable_id_white_list": {
                         "description": "启用 ID 白名单",
