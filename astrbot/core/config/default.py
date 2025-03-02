@@ -1058,3 +1058,90 @@ DEFAULT_VALUE_MAP = {
     "list": [],
     "object": {},
 }
+# "project_atri": {
+#     "description": "Project ATRI 配置",
+#     "type": "object",
+#     "items": {
+#         "enable": {"description": "启用", "type": "bool"},
+#         "long_term_memory": {
+#             "description": "长期记忆",
+#             "type": "object",
+#             "items": {
+#                 "enable": {"description": "启用", "type": "bool"},
+#                 "summary_threshold_cnt": {
+#                     "description": "摘要阈值",
+#                     "type": "int",
+#                     "hint": "当一个会话的对话记录数量超过该阈值时，会自动进行摘要。",
+#                 },
+#                 "embedding_provider_id": {
+#                     "description": "Embedding provider ID",
+#                     "type": "string",
+#                     "hint": "只有当启用了长期记忆时，才需要填写此项。将会使用指定的 provider 来获取 Embedding，请确保所填的 provider id 在 `配置页` 中存在并且设置了 Embedding 配置",
+#                     "obvious_hint": True,
+#                 },
+#                 "summarize_provider_id": {
+#                     "description": "Summary provider ID",
+#                     "type": "string",
+#                     "hint": "只有当启用了长期记忆时，才需要填写此项。将会使用指定的 provider 来获取 Summary，请确保所填的 provider id 在 `配置页` 中存在。",
+#                     "obvious_hint": True,
+#                 },
+#             },
+#         },
+#         "active_message": {
+#             "description": "主动消息",
+#             "type": "object",
+#             "items": {
+#                 "enable": {"description": "启用", "type": "bool"},
+#             },
+#         },
+#         "vision": {
+#             "description": "视觉理解",
+#             "type": "object",
+#             "items": {
+#                 "enable": {"description": "启用", "type": "bool"},
+#                 "provider_id_or_ofa_model_path": {
+#                     "description": "提供商 ID 或 OFA 模型路径",
+#                     "type": "string",
+#                     "hint": "将会使用指定的 provider 来进行视觉处理，请确保所填的 provider id 在 `配置页` 中存在。",
+#                 },
+#             },
+#         },
+#         "split_response": {
+#             "description": "是否分割回复",
+#             "type": "bool",
+#             "hint": "启用后，将会根据句子分割回复以更像人类回复。每次回复之间具有随机的时间间隔。默认启用。",
+#         },
+#         "persona": {
+#             "description": "人格",
+#             "type": "string",
+#             "hint": "默认人格。当启动 ATRI 之后，在 Provider 处设置的人格将会失效。",
+#             "obvious_hint": True,
+#         },
+#         "chat_provider_id": {
+#             "description": "Chat provider ID",
+#             "type": "string",
+#             "hint": "将会使用指定的 provider 来进行文本聊天，请确保所填的 provider id 在 `配置页` 中存在。",
+#             "obvious_hint": True,
+#         },
+#         "chat_base_model_path": {
+#             "description": "用于聊天的基座模型路径",
+#             "type": "string",
+#             "hint": "用于聊天的基座模型路径。当填写此项和 Lora 路径后，将会忽略上面设置的 Chat provider ID。",
+#             "obvious_hint": True,
+#         },
+#         "chat_adapter_model_path": {
+#             "description": "用于聊天的 Lora 模型路径",
+#             "type": "string",
+#             "hint": "Lora 模型路径。",
+#             "obvious_hint": True,
+#         },
+#         "quantization_bit": {
+#             "description": "量化位数",
+#             "type": "int",
+#             "hint": "模型量化位数。如果你不知道这是什么，请不要修改。默认为 4。",
+#             "obvious_hint": True,
+#         },
+#     },
+# },
+
+
