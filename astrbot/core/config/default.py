@@ -163,16 +163,6 @@ CONFIG_METADATA_2 = {
                         "start_message": "Hello, I'm AstrBot!",
                         "telegram_api_base_url": "https://api.telegram.org/bot",
                     },
-                    "Coze": {
-                        "id": "coze",
-                        "type": "coze",
-                        "enable": False,
-                        "app_type": "",
-                        "api_key": "",
-                        "api_base_url": "",
-                        "bot_id": "",
-                        "timeout": 10,
-                    },
                 },
                 "items": {
                     "telegram_token": {
@@ -231,26 +221,6 @@ CONFIG_METADATA_2 = {
                         "type": "string",
                         "hint": "请务必填对，否则 @ 机器人将无法唤醒，只能通过前缀唤醒。",
                         "obvious_hint": True,
-                    },
-                    "app_type": {
-                        "description": "Coze应用类型",
-                        "type": "string",
-                    },
-                    "api_key": {
-                        "description": "API Key",
-                        "type": "string",
-                    },
-                    "api_base_url": {
-                        "description": "API Base URL",
-                        "type": "string",
-                    },
-                    "bot_id": {
-                        "description": "Bot ID",
-                        "type": "string",
-                    },
-                    "timeout": {
-                        "description": "超时时间（秒）",
-                        "type": "int",
                     },
                 },
             },
@@ -658,30 +628,14 @@ CONFIG_METADATA_2 = {
                         "timeout": "20",
                     },
                     "Coze": {
-                        "id": {
-                            "type": "string",
-                            "description": "Coze服务商ID"
-                        },
-                        "app_type": {
-                            "type": "string",
-                            "description": "Coze应用类型"
-                        },
-                        "api_key": {
-                            "type": "string",
-                            "description": "API Key"
-                        },
-                        "api_base_url": {
-                            "type": "string",
-                            "description": "API Base URL"
-                        },
-                        "bot_id": {
-                            "type": "string",
-                            "description": "Bot ID"
-                        },
-                        "timeout": {
-                            "type": "int",
-                            "description": "超时时间（秒）"
-                        }
+                        "id": "coze",
+                        "type": "coze",
+                        "enable": True,
+                        "app_type": "",
+                        "api_key": "",
+                        "api_base_url": "",
+                        "bot_id": "",
+                        "timeout": 60
                     },
                 },
                 "items": {
